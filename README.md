@@ -90,6 +90,15 @@ def forward(self, x: Tensor, bbox_mask: Tensor, fpns: List[Tensor]):
 EXPLAIN THESE STEPS
 ------------------
 
+- The input image is passed through a ResNet50 backbone, it encodes the image to higher dimentional features to be processed by multihead attention layers. The output of each last four block of resnet is kept, the final output of resnet is of shape (h/32,w/32,2048).
+- The encoded image is processed to dimension of (h/32*w/32,256) and passed to multi head attention block which consists of a encoder and decoder block.
+- The activation maps generated after the multihead attention of shape (NxMxH/32xW/32) are passed through a FPN style CNN to upscale the mask
+- The final result is passed to pixel wise argmax to generate the final segmentation mask output
+
+
+How are you going to solve this problem.
+--------------------
+
 
 
 
