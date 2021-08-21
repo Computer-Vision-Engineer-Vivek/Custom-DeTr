@@ -99,6 +99,10 @@ EXPLAIN THESE STEPS
 How are you going to solve this problem.
 --------------------
 
-
+- Our Segmentation dataset has only has labels for the things categories, first job is to generate the stuff labells like for sky, grass etc. classes and combine it with out dataset
+- Our first job is to solve the problem of object detection, but our dataset set has labels for segmentation. We can convert Segments to BBOXes using this [code](https://docs.opencv.org/3.0-beta/doc/py_tutorials/py_imgproc/py_contours/py_contour_features/py_contour_features.html#contour-features)
+- First train DETR to predict boxes around things and stuff using ResNet50 backbone
+- After DeTr is trained for object detection, then a segmentation mask is added over it
+- Then Detr can be trained for segmentation after freezing weights of objection detection model
 
 
