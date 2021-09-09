@@ -31,13 +31,9 @@ In this procedure the aim was to get the predicted mask by the pretrained weight
 Finally we had two things: the first is ground truth which was labeled by us and prediction of DeTr weights. we mapped both the outputs together for getting labels for all the classes 
 In this case we also faced the issue of overlapping coordinates for the classes we labeled and the same classes predicted by the DeTr.
 
-## Step-4) How the Overlapping Problem was handled & what about the predefined coco classes which was predicted by the DeTr?
+## Step-3) How the Overlapping Problem was handled & what about the predefined coco classes which was predicted by the DeTr?
 One Problem was the predefined coco classes. so, we treated them as miscellaneous stuff for the model. These classes include Person, Car, Airplane etc..
 Also the overlapping area was considered  as miscellaneous stuff for all the images
 
-## Step-5) Final step
+## Step-4) Final step
 Finally we had the labeled data so, splitted it in train and test set for training in ration of 70:30, Cloned the Github Repository of DeTr and trained the model on custom classes
-
-
-
-
