@@ -1,3 +1,5 @@
+# Object Detection Phase-2
+
 # Custom-DeTr
 
 # The Problem Statement
@@ -6,10 +8,7 @@
 - Train DETR on this dataset!
 - Explain the additional questions above
 - Submit all the annotated images by 21st August. Dataset will be shared on 19th August.
-- The project is divided into 3 parts with 3 sequential submissions:
-- Submit (on the 7th day from today)  the questions asked above with a readme file explaining how you are going to solve this problem. 
 - Submit (on the 20th day from today) the model trained for BBOX detection on your dataset (combined with stuff)
-- Submit (on the 30th day from today) the final model trained for segmentation on your model
 - You need to document your training process, and link separate (properly named) notebooks in the readme file along with notes for me to understand how you have trained your model. Your training logs MUST be available for review.
 - This is not a group assignment, and your code must not match any other student.
 - You need to document your training process, and link separate (properly named) notebooks in the readme file along with notes for me to understand how you have trained your model. Your training logs MUST be available for review.  
@@ -19,7 +18,6 @@
 - You must show the results on 100 randomly picked samples from the test dataset and show the results in the following 3 parallel images:
 - First Image: Original Image
 - Second: Ground Truth
-- Third: Predicted Segmentation Map
 - I am going to read your README to understand the whole thing. If it doesn't cover something (like what loss function you used, or how the logs looked like) I would assume that it's not done and the assignment would be graded accordingly. 
 
 
@@ -36,4 +34,4 @@ One Problem was the predefined coco classes. so, we treated them as miscellaneou
 Also the overlapping area was considered  as miscellaneous stuff for all the images
 
 ## Step-4) Final step
-Finally we had the labeled data so, splitted it in train and test set for training in ration of 70:30, Cloned the Github Repository of DeTr and trained the model on custom classes
+Finally we had the labeled data so, splitted it in train and test set for training in ration of 80:20, Cloned the Github Repository of DeTr and trained the model on custom classes
