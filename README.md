@@ -53,7 +53,12 @@ On resuming Training
 python main2.py --dataset_file coco --coco_path data/ --output_dir output --resume output/checkpoint.pth --epochs 500 --batch_size 2
 ```
 
+Logs
+------------
 
+
+Output
+--------
 
 
 
