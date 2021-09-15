@@ -45,12 +45,14 @@ cd weights
 wget https://dl.fbaipublicfiles.com/detr/detr-r50-e632da11.pth
 cd ..
 ```
-Start Training 
+**Start Training :**
+
+For the initial 80 epochs model was trained on lower input size of scales `scales = [480, 512, 544, 576, 608, 640]` to speed up the training and later it was traiined on higher resolution `scales = [480, 512, 544, 576, 608, 640, 672, 704, 736, 768, 800]` Training total of ... epochs
 ```
-python main.py --dataset_file coco --coco_path data/ --output_dir output --resume weights/detr-r50-e632da11.pth --epochs 500 --batch_size 2
+python main.py --dataset_file coco --coco_path data/ --output_dir output --resume weights/detr-r50-e632da11.pth --epochs 100 --batch_size 2
 
 On resuming Training 
-python main2.py --dataset_file coco --coco_path data/ --output_dir output --resume output/checkpoint.pth --epochs 500 --batch_size 2
+python main2.py --dataset_file coco --coco_path data/ --output_dir output --resume output/checkpoint.pth --epochs 100 --batch_size 2
 ```
 
 Logs
