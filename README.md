@@ -3,6 +3,10 @@
 Training [DeTr](https://github.com/facebookresearch/detr) on a custom dataset to predict Materials used in Construction Materials.
 ![](images/DETR.png)
 
+Unlike traditional computer vision techniques, DETR approaches object detection as a direct set prediction problem. It consists of a set-based global loss, which forces unique predictions via bipartite matching, and a Transformer encoder-decoder architecture. Given a fixed small set of learned object queries, DETR reasons about the relations of the objects and the global image context to directly output the final set of predictions in parallel. Due to this parallel nature, DETR is very fast and efficient.
+
+
+
 #### Step-1) How was the labeling handled?
 We were having a labeled dataset for panoptic segmentation but only things like grader, cement, hydra crane were labeled in the images not stuff classes. So, we used pretrained DeTr on coco dataset for getting annotations for all the classes. 
 In this procedure the aim was to get the predicted mask and the bounding box by the pretrained weights for getting the stuff classes. 
@@ -73,7 +77,7 @@ python main2.py --dataset_file coco --coco_path data/ --output_dir output --resu
 # Results
 Logs
 ------------
-[check results and training logs here]()
+[check results and training logs here](detr/output/log.txt)
 ![](images/logs.png)
 
 
@@ -84,7 +88,7 @@ Output & Infrence
 ```
 python detect.py --num_test 100 --thresh 0.65 --resume output/checkpoint.pth --save_location predictions_out
 ```
-![](images/)
+![](images/result/)
 
 
 
