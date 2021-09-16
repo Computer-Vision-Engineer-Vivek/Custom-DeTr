@@ -62,7 +62,7 @@ cd ..
     ```     
 5. Replace line 183 `model_without_ddp.load_state_dict(checkpoint['model'], strict=False)`
 
-For the initial 80 epochs model was trained on lower input size of scales `scales = [480, 512, 544, 576, 608, 640]` to speed up the training and later it was traiined on higher resolution `scales = [480, 512, 544, 576, 608, 640, 672, 704, 736, 768, 800]` Training total of ... epochs
+For the initial 80 epochs model was trained on lower input size of scales `scales = [480, 512, 544, 576, 608, 640]` to speed up the training and later it was traiined on higher resolution `scales = [480, 512, 544, 576, 608, 640, 672, 704, 736, 768, 800]` Training total of 115 epochs, each epoch took around 1.5hr on google colab as only batch size of 2 can be used due to memory limit.
 ```
 python main.py --dataset_file coco --coco_path data/ --output_dir output --resume weights/detr-r50-e632da11.pth --epochs 100 --batch_size 2
 
