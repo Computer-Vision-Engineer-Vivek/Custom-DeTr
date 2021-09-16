@@ -1,5 +1,7 @@
 # Phase-2: Object Detection Using Detection Transformers 
 
+[To Phase 1 Readme](https://github.com/vivek-a81/Custom-DeTr/blob/main/Phase1.md)
+
 Training [DeTr](https://github.com/facebookresearch/detr) on a custom dataset to predict Materials used in Construction Materials.
 ![](images/DETR.png)
 
