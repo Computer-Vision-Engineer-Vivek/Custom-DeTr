@@ -1,7 +1,7 @@
 # Phase-2: Object Detection Using Detection Transformers 
 
 Training [DeTr](https://github.com/facebookresearch/detr) on a custom dataset to predict Materials used in Construction Materials.
-
+![](images/DETR.png)
 
 #### Step-1) How was the labeling handled?
 We were having a labeled dataset for panoptic segmentation but only things like grader, cement, hydra crane were labeled in the images not stuff classes. So, we used pretrained DeTr on coco dataset for getting annotations for all the classes. 
@@ -73,7 +73,8 @@ python main2.py --dataset_file coco --coco_path data/ --output_dir output --resu
 # Results
 Logs
 ------------
-![](images/)
+[check results and training logs here]()
+![](images/logs.png)
 
 
 Output & Infrence
