@@ -127,11 +127,25 @@ Logs
 Output & Infrence
 --------
 
-- For inference run `detect.py` by default it takes data from test.json, if you want to run on single image use `infer` function
+For inference run `detect.py` by default it takes data from test.json, if you want to run on single image use `infer` function
 ```
 python detect.py --num_test 100 --thresh 0.65 --resume output/checkpoint.pth --save_location predictions_out
 ```
-![](images/result/)
+The 100 saves results can be found in [folder](images/results) or displayed in [Notebook](predictions.ipynb), few results are displayed below
+
+![](images/results/pred_17.png)
+![](images/results/pred_140.png)
+![](images/results/pred_125.png)
+![](images/results/pred_137.png)
+![](images/results/pred_131.png)
+![](images/results/pred_61.png)
+![](images/results/pred_43.png)
+![](images/results/pred_39.png)
+![](images/results/pred_8.png)
+![](images/results/pred_15.png)
+
+
+
 
 
 
