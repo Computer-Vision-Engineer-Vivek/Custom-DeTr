@@ -29,6 +29,43 @@ Another issue of overlapping coordinates for the classes that were labeled and t
 #### Step-4) Final step
 Finally we had the labeled data so, splitted it in train and test set for training in ration of 80:20, Cloned the Github Repository of DeTr and trained the model on custom classes
 
+# Data Structure 
+```
+<data>/
+    class1/
+        images/
+            <filename0>.<ext>
+            <filename1>.<ext>
+            ...
+        coco.json
+    class2/
+        images/
+            <filename0>.<ext>
+            <filename1>.<ext>
+            ...
+        coco.json
+    ..
+```
+
+COCO Format
+---------------
+
+COCO is large scale images with Common Objects in Context (COCO) for object detection, segmentation, and captioning data set. COCO has 1.5 million object instances for 80 object categories. COCO stores annotations in a JSON file. Let’s look at the JSON format for storing the annotation details for the bounding box. This will help to create your own data set using the COCO format. You can get the dataset from [their website](https://cocodataset.org/#download)
+
+- info: contains high-level information about the dataset.
+- licenses: contains a list of image licenses that apply to images in the dataset.
+- categories: contains a list of categories. Categories can belong to a supercategory
+- images: contains all the image information in the dataset without bounding box or segmentation information. image ids need to be unique
+- annotations: list of every individual object annotation from every image in the dataset
+
+```
+"info": [info],
+"licenses": [licenses],
+"categories": [categories],
+"images": [all images],
+"annotations": [corresponding annotations]
+```
+
 **The Things classes:** *'aac_blocks', ' adhesives', ' ahus', ' aluminium_frames_for_false_ceiling', ' chiller', ' concrete_mixer_machine', ' concrete_pump_(50%)', ' control_panel', ' cu_piping', ' distribution_transformer', ' dump_truck___tipper_truck', ' emulsion_paint', ' enamel_paint', ' fine_aggregate', ' fire_buckets', ' fire_extinguishers', ' glass_wool', ' grader', ' hoist', ' hollow_concrete_blocks', ' hot_mix_plant', ' hydra_crane', ' interlocked_switched_socket', ' junction_box', ' lime', ' marble', ' metal_primer', ' pipe_fittings', ' rcc_hume_pipes', ' refrigerant_gas', ' river_sand', ' rmc_batching_plant', ' rmu_units', ' sanitary_fixtures', ' skid_steer_loader_(bobcat)', ' smoke_detectors', ' split_units', ' structural_steel_-_channel', ' switch_boards_and_switches', ' texture_paint', ' threaded_rod', ' transit_mixer', ' vcb_panel', ' vitrified_tiles', ' vrf_units', ' water_tank', ' wheel_loader', ' wood_primer'*
 
 **The Stuff Classes:** *'banner', 'blanket', 'bridge', 'cardboard', 'counter', 'curtain', 'door-stuff', 'floor-wood', 'flower', 'fruit', 'gravel', 'house', 'light', 'mirror-stuff', 'net', 'pillow', 'platform', 'playingfield', 'railroad', 'river', 'road', 'roof', 'sand', 'sea', 'shelf', 'snow', 'stairs', 'tent', 'towel', 'wall-brick', 'wall-stone', 'wall-tile', 'wall-wood', 'water-other', 'window-blind', 'window-other', 'tree-merged', 'fence-merged', 'ceiling-merged', 'sky-other-merged', 'cabinet-merged', 'table-merged', 'floor-other-merged', 'pavement-merged', 'mountain-merged', 'grass-merged', 'dirt-merged', 'paper-merged', 'food-other-merged', 'building-other-merged', 'rock-merged', 'wall-other-merged', 'rug-merged', 'miscellaneous stuff'*
