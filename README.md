@@ -70,15 +70,20 @@ When resuming Training
 python main2.py --dataset_file coco --coco_path data/ --output_dir output --resume output/checkpoint.pth --epochs 100 --batch_size 2
 ```
 
+# Results
 Logs
 ------------
+![](images/)
 
 
-Output
+Output & Infrence
 --------
 
-
-
+- For inference run `detect.py` by default it takes data from test.json, if you want to run on single image use `infer` function
+```
+python detect.py --num_test 100 --thresh 0.65 --resume output/checkpoint.pth --save_location predictions_out
+```
+![](images/)
 
 
 
