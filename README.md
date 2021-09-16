@@ -131,7 +131,7 @@ For inference run `detect.py` by default it takes data from test.json, if you wa
 ```
 python detect.py --num_test 100 --thresh 0.65 --resume output/checkpoint.pth --save_location predictions_out
 ```
-The 100 saves results can be found in [folder](images/results) or displayed in [Notebook](predictions.ipynb), few results are displayed below
+The 100 saves results can be found in [folder](images/results), few results are displayed below
 
 ![](images/results/pred_17.png)
 ![](images/results/pred_140.png)
