@@ -1,6 +1,20 @@
-# Phase-2: Object Detection Using Detection Transformers 
+# Fine Tuning DeTr: Object Detection and Segmentation 
 
-[To Phase 1 Readme](https://github.com/vivek-a81/Custom-DeTr/blob/main/Phase1.md)
+# Table of Content
+- [To Phase 1 Readme](https://github.com/vivek-a81/Custom-DeTr/blob/main/Phase1.md)
+- [Methodology](#step-1-how-was-the-labeling-handled)
+- [Data Structure](#data-structure)
+- [COCO Format & Classes](#coco-format)
+- [Phase 2: Object Detection](#object-detection )
+    - [Data Preperation for Object Detection](#data-prepration)
+    - [Training Procedure](#steps-for-training)
+    - [Results](#results)
+        - [Logs](#logs)
+        - [Predictions](#output--infrence) 
+ - [Phase 3: Segmentaion](#object-detection )
+    - [Data Preperation for Object Detection](#data-prepration)
+    - [Training Procedure](#steps-for-training)
+    - [Predictions](#predictions)
 
 Training [DeTr](https://github.com/facebookresearch/detr) on a custom dataset to predict Materials used in Construction Materials.
 ![](images/DETR.png)
@@ -72,6 +86,8 @@ COCO is large scale images with Common Objects in Context (COCO) for object dete
 
 **The Stuff Classes:** *'banner', 'blanket', 'bridge', 'cardboard', 'counter', 'curtain', 'door-stuff', 'floor-wood', 'flower', 'fruit', 'gravel', 'house', 'light', 'mirror-stuff', 'net', 'pillow', 'platform', 'playingfield', 'railroad', 'river', 'road', 'roof', 'sand', 'sea', 'shelf', 'snow', 'stairs', 'tent', 'towel', 'wall-brick', 'wall-stone', 'wall-tile', 'wall-wood', 'water-other', 'window-blind', 'window-other', 'tree-merged', 'fence-merged', 'ceiling-merged', 'sky-other-merged', 'cabinet-merged', 'table-merged', 'floor-other-merged', 'pavement-merged', 'mountain-merged', 'grass-merged', 'dirt-merged', 'paper-merged', 'food-other-merged', 'building-other-merged', 'rock-merged', 'wall-other-merged', 'rug-merged', 'miscellaneous stuff'*
 
+# Object Detection 
+
 Data Prepration
 ---------------------------
 
@@ -121,6 +137,15 @@ python main2.py --dataset_file coco --coco_path data/ --output_dir output --resu
 Logs
 ------------
 [check results and training logs here](detr/output/log.txt)
+
+```
+from pathlib import Path
+from util.plot_utils import plot_precision_recall, plot_logs
+
+log_dir = Path('output')
+plot_logs(log_dir)
+```
+
 ![](images/logs.png)
 
 
@@ -146,6 +171,32 @@ The 100 saves results can be found in [folder](images/results), few results are 
 
 
 
+# Object Detection 
 
+Data Prepration
+---------------------------
+
+1. Update annotations according to format for panoptic using [2panoptic_format.py](/2panoptic_format.py) `python 2panoptic_format.py`
+2. A custom dataloader was created [custom_panoptic.py](/detr/datasets/custom_panoptic.py)
+
+Steps For training
+--------------
+
+Changes Will be required as we created a custom dataloader file named custom_panoptic
+
+1. In `datasets/__init__.py` change line 21 to `if args.dataset_file == 'custom_panoptic':`
+2. In `models/detr.py` change line 355 to `if args.dataset_file == "custom_panoptic":`
+
+```
+python main2.py --masks --epochs 25 --lr_drop 15 --coco_path data/ --coco_panoptic_path  data/ --dataset_file custom_panoptic  \
+  --output_dir output_pan --frozen_weights output/checkpoint.pth
+  
+while resuming training 
+python main2.py --masks --epochs 25 --lr_drop 15 --coco_path data/ --coco_panoptic_path  data/ --dataset_file custom_panoptic  \
+  --output_dir output_pan --frozen_weights output/checkpoint.pth --resume output_pan/checkpoint.pth
+```
+
+Predictions
+-----------
 
 
