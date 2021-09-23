@@ -206,6 +206,7 @@ The segmentaion model was trainined for 9 epochs, the 100 results are stored in 
 ![](images/results_pan/pred_82.png)
 ![](images/results_pan/pred_93.png)
 ![](images/results_pan/pred_127.png)
+![](images/results_pan/pred_128.png)
 ![](images/results_pan/pred_121.png)
 ![](images/results_pan/pred_180.png)
 ![](images/results_pan/pred_198.png)
