@@ -11,9 +11,9 @@
     - [Results](#results)
         - [Logs](#logs)
         - [Predictions](#output--infrence) 
- - [Phase 3: Segmentaion](#object-detection )
-    - [Data Preperation for Object Detection](#data-prepration)
-    - [Training Procedure](#steps-for-training)
+ - [Phase 3: Segmentaion](#segmentation)
+    - [Data Preperation for Object Detection](#data-prepration-1)
+    - [Training Procedure](#steps-for-training-1)
     - [Predictions](#predictions)
 
 Training [DeTr](https://github.com/facebookresearch/detr) on a custom dataset to predict Materials used in Construction Materials.
@@ -171,7 +171,7 @@ The 100 saves results can be found in [folder](images/results), few results are 
 
 
 
-# Object Detection 
+# Segmentation 
 
 Data Prepration
 ---------------------------
@@ -198,5 +198,8 @@ python main2.py --masks --epochs 25 --lr_drop 15 --coco_path data/ --coco_panopt
 
 Predictions
 -----------
+The segmentaion model was trainined for 
+```
 
+```
 
