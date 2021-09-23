@@ -187,13 +187,10 @@ if __name__=='__main__':
             if not os.path.isfile(im_path):
                 continue 
             
-            im = Image.open(im_path)
+            im = Image.open(im_path).convert('RGB')
+            
             if im.size!=(w,h):
-                continue
-            if len(np.array(im).shape)==2 or np.array(im).shape[-1]!=3:
-                print(f"Found a corrupt image {im_path}")
-                k += 1
-                continue
+                continue    
             if k==len(data['annotations']): # this cond'n is true then are more images then annotions
                 break
 
