@@ -198,8 +198,35 @@ python main2.py --masks --epochs 25 --lr_drop 15 --coco_path data/ --coco_panopt
 
 Predictions
 -----------
-The segmentaion model was trainined for 
-```
+The segmentaion model was trainined for 9 epochs, the 100 results are stored in [folder](images/results_pan), few results are displayed below
 
+
+```
+![](images/results_pan/pred_17.png)
+![](images/results_pan/pred_15.png)
+![](images/results_pan/pred_18.png)
+![](images/results_pan/pred_82.png)
+![](images/results_pan/pred_93.png)
+![](images/results_pan/pred_127.png)
+![](images/results_pan/pred_121.png)
+![](images/results_pan/pred_180.png)
+![](images/results_pan/pred_198.png)
+![](images/results_pan/pred_227.png)
+![](images/results_pan/pred_264.png)
+![](images/results_pan/pred_265.png)
+![](images/results_pan/pred_272.png)
+![](images/results_pan/pred_273.png)
+![](images/results_pan/pred_293.png)
+![](images/results_pan/pred_302.png)
+![](images/results_pan/pred_327.png)
+![](images/results_pan/pred_328.png)
+![](images/results_pan/pred_349.png)
+![](images/results_pan/pred_394.png)
+![](images/results_pan/pred_458.png)
+![](images/results_pan/pred_374.png)
+![](images/results_pan/pred_601.png)
+![](images/results_pan/pred_616.png)
+![](images/results_pan/pred_622.png)
+![](images/results_pan/pred_621.png)
 ```
 
