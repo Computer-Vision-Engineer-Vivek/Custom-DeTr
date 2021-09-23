@@ -200,8 +200,6 @@ Predictions
 -----------
 The segmentaion model was trainined for 9 epochs, the 100 results are stored in [folder](images/results_pan), few results are displayed below
 
-
-```
 ![](images/results_pan/pred_17.png)
 ![](images/results_pan/pred_15.png)
 ![](images/results_pan/pred_18.png)
@@ -228,5 +226,5 @@ The segmentaion model was trainined for 9 epochs, the 100 results are stored in 
 ![](images/results_pan/pred_616.png)
 ![](images/results_pan/pred_622.png)
 ![](images/results_pan/pred_621.png)
-```
+
 
