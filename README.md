@@ -198,7 +198,7 @@ python main2.py --masks --epochs 25 --lr_drop 15 --coco_path data/ --coco_panopt
 
 Predictions
 -----------
-The segmentaion model was trainined for 9 epochs, the 100 results are stored in [folder](images/results_pan), few results are displayed below
+The segmentaion model was trainined for 25 epochs, the 100 results are stored in [folder](images/results_pan), few results are displayed below
 
 ![](images/results_pan/pred_17.png)
 ![](images/results_pan/pred_15.png)
